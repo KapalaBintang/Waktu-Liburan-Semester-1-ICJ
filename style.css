@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  font-family: "Lato", sans-serif;
+}
+
+body {
+  background-color: black;
+  color: white;
+  background-image: url("ic.jpg");
+  background-size: 86rem 40rem;
+  background-repeat: no-repeat;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 80px;
+}
+
+.box {
+  background-color: rgba(51, 184, 100, 1);
+  max-width: 300px;
+  margin: 0 auto;
+  margin-top: 120px;
+  padding: 45px;
+  border: white 1px solid;
+  border-radius: 5px;
+}
+
+.box:hover {
+  background-color: rgba(51, 184, 100, 0.3);
+  transition: 0.5s;
+}
+
+.sekarang {
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+}
+
+.sekarang span {
+  margin: 0 3px;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  font-size: 70px;
+}

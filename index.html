@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MASUK IC!</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Metal+Mania&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <h1>WAKTU LIBURAN SEMESTER 1 MAN ICJ</h1>
+    <div class="box">
+      <div class="sekarang">
+        <span id="today">Hari,</span>
+        <span id="month">Bulan</span>
+        <span id="year">Tahun</span>
+      </div>
+      <div class="countdown">
+        <span id="days">00:</span>
+        <span id="hours">00:</span>
+        <span id="minutes">00:</span>
+        <span id="seconds">00</span>
+      </div>
+    </div>
+
+    <script>
+      let now = new Date();
+      // Hari
+      let days = now.getDay();
+      const daysList = ["Sunday,", "Monday,", "Tuesday,", "Wednesday,", "Thursday,", "Friday,", "Saturday,"];
+      // bulan
+      let month = now.getMonth();
+      let monthsList = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+      // Tahun
+      let year = now.getFullYear();
+      let getDay = document.getElementById("today");
+      let getMonth = document.getElementById("month");
+      let getYear = document.getElementById("year");
+      getDay.innerHTML = daysList[days];
+      getMonth.innerHTML = monthsList[month];
+      getYear.innerHTML = year;
+
+      // Times
+
+      const hitungMundur = setInterval(function () {
+        let tanggalMasuk = new Date("Jan 2, 2024 17:00:00").getTime();
+        let sekarang = new Date().getTime();
+        const selisih = tanggalMasuk - sekarang;
+        let daytime = Math.floor(selisih / (1000 * 60 * 60 * 24));
+        let hourtime = Math.floor((selisih % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        let minutetime = Math.floor((selisih % (1000 * 60 * 60)) / (1000 * 60));
+        let times = Math.floor((selisih % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerHTML = daytime + ":";
+        document.getElementById("hours").innerHTML = hourtime + ":";
+        document.getElementById("minutes").innerHTML = minutetime + ":";
+        document.getElementById("seconds").innerHTML = times;
+      }, 1000);
+    </script>
+  </body>
+</html>
